@@ -1,8 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Counter = ({ value, onIncrement, onDecrement }) =>
+const Counter = ({ value, onIncrement, onDecrement, onIncrementAsync}) =>
   <div>
+    <button onClick={onIncrementAsync}>
+      Increment after 1 second
+    </button>
+    {' '}    
     <button onClick={onIncrement}>
       Increment
         </button>
@@ -18,6 +22,7 @@ const Counter = ({ value, onIncrement, onDecrement }) =>
 
 Counter.propTypes = {
   value: PropTypes.number.isRequired,
+  onIncrementAsync: PropTypes.func.isRequired,
   onIncrement: PropTypes.func.isRequired,
   onDecrement: PropTypes.func.isRequired
 }
